@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orca Drake - Portfolio & Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Orca Drake</h1>
+        <p>IT / Lập trình nhúng (Embedded Systems)</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Giới thiệu (About Me)</h2>
+            <p>Xin chào! Tôi là Orca Drake, một lập trình viên đam mê với lĩnh vực hệ thống nhúng. Trang web này là nơi tôi chia sẻ thông tin và một trò chơi nhỏ để bạn giải trí.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Kỹ năng (Embedded IT Skills)</h2>
+            <ul>
+                <li>Ngôn ngữ lập trình: C/C++, Python, Assembly</li>
+                <li>Vi điều khiển: STM32, ESP32, Arduino, Raspberry Pi</li>
+                <li>Giao thức: UART, SPI, I2C, CAN, MQTT</li>
+                <li>Hệ điều hành thời gian thực (RTOS)</li>
+            </ul>
+        </section>
+
+        <section id="game-section">
+            <h2>Giải trí: Bắn chim</h2>
+            <div id="game-container">
+                <canvas id="gameCanvas"></canvas>
+                <div id="game-ui">
+                    <div id="score">Score: 0</div>
+                    <div id="timer">Time: 30</div>
+                </div>
+                <!-- Nút này giờ sẽ mở modal nhập tên -->
+                <button id="startButton">Start Game</button>
+            </div>
+        </section>
+
+        <section id="leaderboard">
+            <h2>Bảng xếp hạng (Top 5)</h2>
+            <ol id="leaderboard-list">
+                <!-- Dữ liệu sẽ được load bằng JavaScript -->
+            </ol>
+        </section>
+    </main>
+
+    <!-- Modal Nhập tên người chơi -->
+    <div id="playerInfoModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Nhập tên người chơi</h2>
+            <p>Sẵn sàng để ghi danh vào bảng xếp hạng?</p>
+            <input type="text" id="playerNameInput" placeholder="Nhập tên của bạn..." maxlength="20">
+            <button id="confirmPlayerButton">Bắt đầu chơi!</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Orca Drake. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
