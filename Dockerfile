@@ -8,11 +8,11 @@ WORKDIR /app
 
 # Tối ưu hóa caching của Docker:
 # 1. Chỉ copy file pom.xml trước để tải các dependency
-COPY pom.xml .
+COPY backend/pom.xml .
 RUN mvn dependency:go-offline
 
 # 2. Copy toàn bộ source code còn lại
-COPY src ./src
+COPY backend/src ./src
 
 # Build ứng dụng, bỏ qua các bài test để build nhanh hơn
 # Kết quả sẽ là một file .jar trong thư mục /app/target
