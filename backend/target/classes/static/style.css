@@ -1,0 +1,206 @@
+/* --- Cài đặt chung & Font chữ --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00a8ff; /* Xanh công nghệ */
+    --background-color: #0d1117; /* Nền tối giống GitHub */
+    --text-color: #c9d1d9;
+    --container-bg: #161b22;
+    --border-color: #30363d;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- Bố cục chính --- */
+header, main, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+section {
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* --- Phần Kỹ năng --- */
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills li {
+    background: #21262d;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+#skills li:hover {
+    transform: translateX(5px);
+}
+
+/* --- Khu vực Game --- */
+#game-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+#game-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.2em;
+    pointer-events: none;
+    opacity: 0; /* Ẩn ban đầu */
+    transition: opacity 0.5s;
+}
+
+#score, #timer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 1em;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.5s;
+    z-index: 10;
+}
+
+/* --- Bảng xếp hạng --- */
+#leaderboard ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+#leaderboard li {
+    font-size: 1.1em;
+    padding: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#leaderboard li:last-child {
+    border-bottom: none;
+}
+
+/* --- Modal Nhập tên --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Ẩn mặc định */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--container-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content input {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+}
